@@ -24,6 +24,7 @@
   # within the source dotfiles directory
   stow -D .
   ```
+> For more info visit [this](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/) article. 
 
 ### Important things to change on new os setup 💻
 - Run the command below to enable autocd i.e you won't have to prepend the directory name with cd when you want to chage to that direcotry.
