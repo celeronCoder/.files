@@ -112,3 +112,8 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export FLYCTL_INSTALL="/home/khushal/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+
+# tmux alias
+alias tsh="tmux split-window -h"
+alias tsv="tmux split-window -v"
