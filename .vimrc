@@ -111,9 +111,9 @@ colorscheme gruvbox
 hi! Normal ctermbg=NONE guibg=NONE
 
 "---------------- NerdTree Config ---------------------------
-let g:NERDTreeShowHidden = 0 
+let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 0
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
 let NERTreeStatusLine = 'NERDTree'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
