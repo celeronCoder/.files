@@ -20,7 +20,7 @@ set hidden
 set autowrite
 set encoding=UTF-8
 set autoread
-set spelllang=en_us
+set spelllang=en_u
 set spell
 set noruler
 set confirm
@@ -83,7 +83,9 @@ call plug#begin("~/.vim/plugged")
                 \'coc-xml',
                 \'coc-emmet',
                 \'coc-rust-analyzer',
-                \'coc-go'
+                \'coc-go',
+                \'coc-stylua',
+                \'coc-deno',
     \]
     
     "-------------- Language Server --------------------
@@ -222,3 +224,8 @@ nnoremap <silent> <C-up> :resize +2<CR>
 nnoremap <silent> <C-Left> :vertical resize -2<CR>
 nnoremap <silent> <C-Right> :vertical resize +2<CR>
 
+"--------------- MAPPINGS FOR COC-PRETTER --------------------
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+vmap <C-p> <Plug>(coc-format-selected)
+nmap <C-p> <Plug>(coc-format-selected)
+map <C-p> <Plug>(coc-format-selected)

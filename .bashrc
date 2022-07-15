@@ -130,3 +130,7 @@ stty -ixon
 export PATH="/home/khushal/.deta/bin:$PATH"
 export PATH="/home/khushal/bin/:$PATH"
 . "$HOME/.cargo/env"
+
+# deno
+export DENO_INSTALL="/home/khushal/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
