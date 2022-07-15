@@ -17,6 +17,28 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 
 Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Auto Completion
+
+let g:coc_global_extensions = ['coc-css', 
+                \ 'coc-html', 
+                \'coc-json', 
+                \'coc-tsserver', 
+                \'coc-prettier', 
+                \'coc-eslint', 
+                \'coc-pairs', 
+                \'coc-snippets', 
+                \'coc-jedi', 
+                \'coc-clangd', 
+                \'coc-highlight', 
+                \'coc-sh', 
+                \'coc-yaml', 
+                \'coc-xml',
+                \'coc-emmet',
+                \'coc-rust-analyzer',
+                \'coc-go',
+                \'coc-stylua',
+                \'coc-deno',
+    \]
+
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
@@ -40,14 +62,6 @@ nmap <F8> :TagbarToggle<CR>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
-" --- Just Some Notes ---
-" :PlugClean :PlugInstall :UpdateRemotePlugins
-"
-" :CocInstall coc-python
-" :CocInstall coc-clangd
-" :CocInstall coc-snippets
-" :CocCommand snippets.edit... FOR EACH FILE TYPE
-
 " air-line
 let g:airline_powerline_fonts = 1
 
@@ -56,3 +70,7 @@ if !exists('g:airline_symbols')
 endif
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+" NERDTree Config
+let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
+let NERDTreeShowHidden=1
