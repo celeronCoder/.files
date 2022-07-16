@@ -44,6 +44,23 @@ Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 
+" for airline in tmux
+Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/artify.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'macthecadillac/lightline-gitdiff'
+Plug 'maximbaz/lightline-ale'
+Plug 'albertomontesg/lightline-asyncrun'
+Plug 'rmolin88/pomodoro.vim'
+
+" for prisma syntax highlight
+Plug 'pantharshit00/vim-prisma'
+
+" for svelte syntax highlight
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 set encoding=UTF-8
 
 call plug#end()
