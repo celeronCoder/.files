@@ -61,6 +61,18 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
+" for github copilot
+Plug 'github/copilot.vim'
+
+"--------------- NerdTree Plugins -----------------
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+"---------------- GitGutter ---------------------"
+Plug 'airblade/vim-gitgutter'
+
+
+
 set encoding=UTF-8
 
 call plug#end()
@@ -91,3 +103,41 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 " NERDTree Config
 let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
 let NERDTreeShowHidden=1
+
+" resize mapping
+nnoremap <silent> <C-Down> :resize -2<CR>
+nnoremap <silent> <C-up> :resize +2<CR>
+nnoremap <silent> <C-Left> :vertical resize -2<CR>
+nnoremap <silent> <C-Right> :vertical resize +2<CR>
+
+"-------------------------- COC Config ------------------------------
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gtd <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+
+"--------------- MAPPINGS FOR COC-PRETTER --------------------
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+vmap <C-p> <Plug>(coc-format-selected)
+nmap <C-p> <Plug>(coc-format-selected)
+map <C-p> <Plug>(coc-format-selected)
